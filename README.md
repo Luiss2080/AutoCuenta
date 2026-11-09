@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/assets/logo.svg" alt="SocioFit" width="96" height="96"/>
+<img src="docs/assets/logo.svg" alt="AutoCuenta" width="96" height="96"/>
 
-# SocioFit
+# AutoCuenta
 
-**Control de membresías para gimnasios y academias, con carnet QR, vencimientos y recordatorios por WhatsApp. Offline-first, sin costos mensuales.**
+**Control de ingresos y gastos por vehículo y conductor, con liquidación semanal y exportación CSV. Pensado para flotas pequeñas, offline.**
 
 <p>
 <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
@@ -22,12 +22,12 @@
 
 ## 🚀 Características
 
-- **Socios y planes**: alta de socios con foto, plan mensual/trimestral/anual y precio libre.
-- **Carnet QR**: cada socio tiene un QR para registrar asistencia en la puerta.
-- **Vencimientos**: panel con socios por vencer, vencidos y al día.
-- **Recordatorios locales**: notificaciones en el dispositivo, sin servidor.
-- **Cobro por WhatsApp**: mensaje de pago pre-llenado con un toque.
-- **Caja diaria**: pagos del día y resumen mensual.
+- **Vehículos y conductores** con asignaciones.
+- **Ingresos y gastos** por unidad (combustible, mantenimiento, etc.).
+- **Liquidación semanal** por conductor.
+- **Rentabilidad por vehículo** en el período.
+- **Recordatorios** de mantenimiento y documentos.
+- **Exportación CSV** para contabilidad.
 
 > Sin servidores, sin suscripciones y sin servicios de pago: todos los datos viven en el dispositivo (SQLite).
 
@@ -42,23 +42,23 @@
 
 ### Modelo de datos
 
-- `socios (id, nombre, telefono, foto, creado_en)`
-- `planes (id, nombre, dias, precio)`
-- `membresias (id, socio_id, plan_id, inicio, vence, pagado)`
-- `asistencias (id, socio_id, fecha_hora)`
+- `vehiculos (id, placa, modelo, anio)`
+- `conductores (id, nombre, telefono)`
+- `movimientos (id, vehiculo_id, conductor_id, tipo, categoria, monto, fecha)`
+- `liquidaciones (id, conductor_id, desde, hasta, total)`
 
 ## 🗺️ Roadmap
 
 - [ ] 1. Estructura base y navegación
-- [ ] 2. Socios, planes y membresías
-- [ ] 3. Escaneo QR y asistencias
-- [ ] 4. Recordatorios y WhatsApp
-- [ ] 5. Respaldo/exportación local
+- [ ] 2. Vehículos, conductores y movimientos
+- [ ] 3. Liquidación semanal
+- [ ] 4. Reportes de rentabilidad
+- [ ] 5. Recordatorios y exportación
 
 ## 📂 Estructura
 
 ```text
-SocioFit/
+AutoCuenta/
 ├── app/            # Pantallas y rutas (Expo Router)
 ├── src/
 │   ├── db/         # Esquema y consultas SQLite
@@ -73,8 +73,8 @@ SocioFit/
 Requisitos: Node.js 20+ y la app Expo Go (o un emulador).
 
 ```bash
-git clone https://github.com/Luiss2080/SocioFit.git
-cd SocioFit
+git clone https://github.com/Luiss2080/AutoCuenta.git
+cd AutoCuenta
 npm install
 npx expo start
 ```
