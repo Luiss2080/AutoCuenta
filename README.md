@@ -55,6 +55,8 @@
 - [ ] 4. Reportes de rentabilidad
 - [ ] 5. Recordatorios y exportación
 
+> Detalle fase por fase: [docs/ROADMAP.md](docs/ROADMAP.md) · [docs/SPEC.md](docs/SPEC.md) · [docs/PLANNING.md](docs/PLANNING.md) · [docs/DATOS.md](docs/DATOS.md) · [docs/PANTALLAS.md](docs/PANTALLAS.md) · [docs/PRUEBAS.md](docs/PRUEBAS.md) · [docs/BACKLOG.md](docs/BACKLOG.md)
+
 ## 📂 Estructura
 
 ```text
